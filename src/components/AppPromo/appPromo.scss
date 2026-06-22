@@ -1,0 +1,152 @@
+$green: #275231;
+
+.appPromo {
+  padding: 34px 48px 0;
+  background: #fff;
+
+  &__container {
+    display: grid;
+    width: min(1600px, 100%);
+    min-height: 330px;
+    margin: 0 auto;
+    padding: 0 70px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    background:
+      radial-gradient(circle at 8% 60%, rgba(39, 82, 49, 0.12), transparent 25%),
+      linear-gradient(105deg, #edf3e9, #fafbf8 58%, #f2f6ee);
+    grid-template-columns: minmax(400px, 0.9fr) minmax(440px, 1fr);
+    gap: 80px;
+    align-items: center;
+  }
+
+  &__phones {
+    position: relative;
+    height: 330px;
+    align-self: end;
+
+    img {
+      display: block;
+      width: min(610px, 120%);
+      max-width: none;
+      height: auto;
+      margin: 0 auto -90px;
+      filter: drop-shadow(0 20px 26px rgba(20, 35, 23, 0.2));
+    }
+  }
+
+  &__content {
+    max-width: 650px;
+  }
+
+  &__label {
+    display: inline-flex;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #e1ebdc;
+    color: $green;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin-top: 16px;
+    color: #19231b;
+    font-size: clamp(30px, 3vw, 46px);
+    letter-spacing: -0.045em;
+  }
+
+  &__content > p {
+    max-width: 610px;
+    margin-top: 15px;
+    color: #69716a;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  &__stores {
+    display: flex;
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  &__store {
+    display: flex;
+    min-width: 170px;
+    min-height: 58px;
+    padding: 8px 15px;
+    border: 1px solid rgba(39, 82, 49, 0.12);
+    border-radius: 9px;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #172019;
+
+    > svg {
+      width: 27px;
+      height: 27px;
+    }
+
+    small,
+    strong {
+      display: block;
+    }
+
+    small {
+      color: #777e78;
+      font-size: 8px;
+    }
+
+    strong {
+      margin-top: 2px;
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .appPromo {
+    &__container {
+      padding-inline: 36px;
+      grid-template-columns: 320px 1fr;
+      gap: 36px;
+    }
+
+    &__phones img {
+      width: 540px;
+      margin-left: -60px;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .appPromo {
+    padding: 24px 16px 0;
+
+    &__container {
+      padding: 42px 24px 0;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    &__content {
+      order: -1;
+    }
+
+    &__phones {
+      height: 290px;
+
+      img {
+        width: min(520px, 135%);
+        margin: 0 auto -75px;
+        transform: translateX(-8%);
+      }
+    }
+
+    &__stores {
+      flex-wrap: wrap;
+    }
+  }
+}

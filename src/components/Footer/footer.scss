@@ -1,0 +1,125 @@
+$green: #275231;
+
+.footer {
+  padding: 58px 48px 22px;
+  background:
+    radial-gradient(circle at 87% 22%, rgba(255, 255, 255, 0.08), transparent 24%),
+    $green;
+  color: #fff;
+
+  &__container {
+    display: grid;
+    width: min(1500px, 100%);
+    margin: 0 auto;
+    grid-template-columns: 1.5fr repeat(3, 0.7fr);
+    gap: 70px;
+  }
+
+  &__logo {
+    display: block;
+  }
+
+  &__brand > p {
+    max-width: 360px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  &__socials {
+    display: flex;
+    margin-top: 26px;
+    gap: 10px;
+
+    a {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transition: background-color 180ms ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      svg {
+        width: 18px;
+      }
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+
+    h2 {
+      margin-bottom: 7px;
+      font-size: 15px;
+    }
+
+    a,
+    p {
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 12px;
+      line-height: 1.55;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+  }
+
+  &__contact {
+    max-width: 260px;
+  }
+
+  &__bottom {
+    display: flex;
+    width: min(1500px, 100%);
+    margin: 46px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 11px;
+
+    span {
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.09);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 48px 20px 22px;
+
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+
+    &__bottom {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+    }
+  }
+}
