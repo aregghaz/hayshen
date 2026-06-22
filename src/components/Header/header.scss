@@ -13,9 +13,7 @@ $green: #275231;
     min-height 280ms ease,
     border-color 280ms ease,
     background-color 280ms ease,
-    box-shadow 280ms ease,
-    transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+    box-shadow 280ms ease;
 
   &--scrolled {
     min-height: 72px;
@@ -24,7 +22,6 @@ $green: #275231;
     box-shadow:
       0 1px 0 rgba(39, 82, 49, 0.08),
       0 14px 34px rgba(39, 82, 49, 0.12);
-    transform: translateY(0);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
@@ -85,6 +82,15 @@ $green: #275231;
     justify-content: center;
   }
 
+  &__drawer {
+    display: contents;
+  }
+
+  &__burger,
+  &__backdrop {
+    display: none;
+  }
+
   &__menu {
     display: flex;
     align-items: center;
@@ -138,6 +144,10 @@ $green: #275231;
     flex: 0 0 auto;
     align-items: center;
     gap: 12px;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__button {
@@ -201,46 +211,158 @@ $green: #275231;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 870px) {
   .appHeader {
-    position: sticky;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    &--scrolled {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
 
     &__container {
-      flex-wrap: wrap;
-      gap: 14px 24px;
-      padding: 16px 0;
+      width: 100%;
+      min-height: 76px;
+      padding: 0 20px;
+      flex-wrap: nowrap;
+      gap: 16px;
     }
 
     &--scrolled {
       .appHeader__container {
-        padding-block: 10px;
+        min-height: 68px;
       }
+    }
 
-      .appHeader__menu a {
-        padding-block: 8px;
+    &__logo,
+    &--scrolled &__logo {
+      width: 138px;
+    }
 
-        &::after {
-          bottom: 0;
-        }
+    &__burger {
+      position: relative;
+      z-index: 1004;
+      display: grid;
+      width: 44px;
+      height: 44px;
+      margin-left: 0;
+      padding: 0;
+      border: 1px solid rgba(39, 82, 49, 0.18);
+      border-radius: 10px;
+      place-items: center;
+      background: #fff;
+      color: $green;
+      cursor: pointer;
+
+      svg {
+        width: 23px;
+        height: 23px;
       }
+    }
+
+    &__drawer {
+      position: fixed;
+      z-index: 1003;
+      top: 0;
+      right: 0;
+      display: flex;
+      width: min(360px, 88vw);
+      height: 100dvh;
+      padding: 98px 24px 24px;
+      overflow-y: auto;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: -18px 0 45px rgba(24, 45, 29, 0.16);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100%);
+      transition:
+        opacity 260ms ease,
+        transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .menuBox {
-      order: 3;
-      flex-basis: 100%;
-      justify-content: flex-start;
-      overflow-x: auto;
+      display: block;
+      flex: 1;
     }
 
     &__menu {
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
       justify-content: flex-start;
+      gap: 0;
 
       a {
-        padding: 8px 0;
+        display: flex;
+        min-height: 58px;
+        padding: 0;
+        border-bottom: 1px solid rgba(39, 82, 49, 0.09);
+        align-items: center;
+        font-size: 15px;
 
         &::after {
-          bottom: 0;
+          display: none;
         }
+      }
+    }
+
+    .buttonsBox {
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: flex;
+        margin-left: auto;
+      }
+    }
+
+    .appHeader__drawer .buttonsBox {
+      display: none;
+      width: 100%;
+      margin-top: 28px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__button {
+      min-width: 0;
+      min-height: 44px;
+      padding-inline: 10px;
+    }
+
+    &__backdrop {
+      position: fixed;
+      z-index: 1001;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      background: rgba(13, 27, 17, 0.44);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 260ms ease;
+    }
+
+    &--menu-open {
+      .appHeader__drawer {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0);
+      }
+
+      .appHeader__burger {
+        position: fixed;
+        top: 16px;
+        right: 20px;
+      }
+
+      .appHeader__backdrop {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
       }
     }
   }
@@ -249,21 +371,41 @@ $green: #275231;
 @media (max-width: 520px) {
   .appHeader {
     &__container {
-      width: min(100% - 32px, 1120px);
+      padding-inline: 16px;
     }
 
     &__logo {
       width: 126px;
     }
 
-    .buttonsBox {
-      gap: 8px;
+    .buttonsBox--desktop {
+      display: none;
     }
 
-    &__button {
-      min-height: 38px;
-      padding-inline: 10px;
-      font-size: 11px;
+    &__burger {
+      margin-left: auto;
     }
+
+    .appHeader__drawer .buttonsBox--mobile {
+      display: grid;
+    }
+
+    .menuBox {
+      width: 100%;
+    }
+
+    &--menu-open .appHeader__burger {
+      right: 16px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .appHeader,
+  .appHeader *,
+  .appHeader *::before,
+  .appHeader *::after {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms !important;
   }
 }

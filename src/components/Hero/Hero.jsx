@@ -23,59 +23,60 @@ const benefits = [
 function Hero() {
   return (
     <section className="hero" id="home" aria-label="HayShen">
-      <div className="hero__image">
-        <img src={heroImage} alt="" />
-      </div>
-
       <div className="hero__container">
-        <div className="hero__content">
-          <h1>
-            <span>Շինարարական տեխնիկա</span>
-            և պատվերներ
-            <br />
-            մեկ վայրում
-          </h1>
+        <div className="hero__main">
+          <div className="hero__content">
+            <h1>
+              <span>Շինարարական տեխնիկա</span>
+              և պատվերներ
+              <br />
+              մեկ վայրում
+            </h1>
 
-          <p>
-            HayShen-ը ստեղծվող հարթակ է, որը կմիավորի տեխնիկայի տերերին
-            <br />
-            և պատվիրատուներին՝ դարձնելով որոնումն ու համագործակցությունն ավելի պարզ։
-          </p>
-
-          <div className="hero__actions">
-            <a className="hero__button hero__button--primary" href="#equipment">
-              Տեխնիկա պատվիրել
-            </a>
-            <a className="hero__button hero__button--secondary" href="#specialists">
-              Մասնագետ գտնել
-            </a>
-          </div>
-        </div>
-
-        <div className="hero__benefits">
-          {benefits.map(({ title, text, Icon }) => (
-            <div className="hero__benefit" key={title}>
-              <span className="hero__benefit-icon" aria-hidden="true">
-                <Icon />
-              </span>
-              <span>
-                <strong>{title}</strong>
-                <small>{text}</small>
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <div className="hero__rating">
-          <div className="hero__status-icon" aria-hidden="true">
-            <LoaderCircle />
-          </div>
-          <div>
-            <strong>Մշակման փուլում է</strong>
             <p>
-              Մենք կառուցում ենք HayShen-ի
-              <br />առաջին տարբերակը
+              HayShen-ը ստեղծվող հարթակ է, որը կմիավորի տեխնիկայի տերերին և
+              պատվիրատուներին՝ դարձնելով որոնումն ու համագործակցությունն ավելի
+              պարզ։
             </p>
+
+            <div className="hero__actions">
+              <a className="hero__button hero__button--primary" href="#equipment">
+                Տեխնիկա պատվիրել
+              </a>
+              <a className="hero__button hero__button--secondary" href="#services">
+                Մասնագետ գտնել
+              </a>
+            </div>
+          </div>
+
+          <div className="hero__benefits">
+            {benefits.map(({ title, text, Icon }) => (
+              <div className="hero__benefit" key={title}>
+                <span className="hero__benefit-icon" aria-hidden="true">
+                  <Icon />
+                </span>
+                <span>
+                  <strong>{title}</strong>
+                  <small>{text}</small>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hero__visual">
+          <div className="hero__image">
+            <img src={heroImage} alt="" />
+          </div>
+
+          <div className="hero__rating">
+            <div className="hero__status-icon" aria-hidden="true">
+              <LoaderCircle />
+            </div>
+            <div>
+              <strong>Մշակման փուլում է</strong>
+              <p>Մենք կառուցում ենք HayShen-ի առաջին տարբերակը</p>
+            </div>
           </div>
         </div>
       </div>
