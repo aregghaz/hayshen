@@ -1,19 +1,19 @@
 # HayShen
 
-Чистая основа React-проекта с JSX.
+React նախագիծ՝ կառուցված JSX-ով։
 
-Алиас `@` указывает на папку `src`:
+`@` կեղծանունը հղվում է `src` թղթապանակին։
 
 ```jsx
 import Header from '@/components/Header/Header';
 ```
 
-## Команды
+## Հրամաններ
 
-- `npm start` — запустить локальную разработку
-- `npm run build` — собрать production-версию
+- `npm start` — գործարկել տեղային մշակման միջավայրը
+- `npm run build` — ստեղծել production տարբերակը
 
-## Структура
+## Կառուցվածք
 
 ```text
 src/
