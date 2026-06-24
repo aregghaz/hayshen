@@ -1,4 +1,4 @@
-import { Camera, Globe, Send, Video } from 'lucide-react';
+import { Camera, ExternalLink, Globe, Send, Video } from 'lucide-react';
 import { HayShenLogo } from '@/components/icons/HayShenLogo';
 import '@/components/Footer/footer.scss';
 
@@ -70,7 +70,18 @@ function Footer() {
           © {new Date().getFullYear()} HayShen. Բոլոր իրավունքները պաշտպանված
           են։
         </p>
-        <span>Մշակման փուլում</span>
+        <div className="footer__bottomMeta">
+          <a
+            className="footer__creator"
+            href="https://www.taan-tech.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>Created by TAAN TECHNOLOGIES</span>
+            <ExternalLink aria-hidden="true" />
+          </a>
+          <span>Մշակման փուլում</span>
+        </div>
       </div>
     </footer>
   );
