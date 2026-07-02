@@ -282,6 +282,37 @@ $green: #275231;
   }
 }
 
+@media (min-width: 1850px) {
+  .hero {
+    &__container {
+      min-height: min(680px, calc(100svh - 92px));
+      width: min(1500px, calc(100% - 96px));
+      padding: clamp(36px, 5vw, 68px) 0 52px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(460px, 1.05fr);
+      gap: clamp(42px, 5vw, 82px);
+    }
+
+    &__visual {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      width: 100%;
+      min-width: 0;
+      height: clamp(480px, calc(100svh - 190px), 620px);
+    }
+
+    &__image {
+      height: 100%;
+      border-radius: 24px;
+    }
+
+    &__image img {
+      object-position: center;
+    }
+  }
+}
+
 @media (max-width: 960px) {
   .hero {
     &__container {

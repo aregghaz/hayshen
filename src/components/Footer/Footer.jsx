@@ -80,7 +80,6 @@ function Footer() {
             <span>Created by TAAN TECHNOLOGIES</span>
             <ExternalLink aria-hidden="true" />
           </a>
-          <span>Մշակման փուլում</span>
         </div>
       </div>
     </footer>
