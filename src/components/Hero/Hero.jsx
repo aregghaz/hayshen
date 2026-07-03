@@ -39,14 +39,14 @@ function Hero() {
               պարզ։
             </p>
 
-            <div className="hero__actions">
-              <a className="hero__button hero__button--primary" href="#equipment">
-                Տեխնիկա պատվիրել
-              </a>
-              <a className="hero__button hero__button--secondary" href="#services">
-                Մասնագետ գտնել
-              </a>
-            </div>
+            {/*<div className="hero__actions">*/}
+            {/*  <a className="hero__button hero__button--primary" href="#equipment">*/}
+            {/*    Տեխնիկա պատվիրել*/}
+            {/*  </a>*/}
+            {/*  <a className="hero__button hero__button--secondary" href="#services">*/}
+            {/*    Մասնագետ գտնել*/}
+            {/*  </a>*/}
+            {/*</div>*/}
           </div>
 
           <div className="hero__benefits">

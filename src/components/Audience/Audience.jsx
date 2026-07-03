@@ -78,10 +78,10 @@ function Audience() {
             <li>Հարմար կապ առանց բարդ գործընթացների</li>
           </ul>
 
-          <a href="#home">
-            Բացահայտել HayShen-ը
-            <ArrowRight size={18} />
-          </a>
+          {/*<a href="#home">*/}
+          {/*  Բացահայտել HayShen-ը*/}
+          {/*  <ArrowRight size={18} />*/}
+          {/*</a>*/}
         </div>
       </div>
     </section>

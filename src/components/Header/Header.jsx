@@ -6,7 +6,7 @@ import { HayShenLogo } from '@/components/icons/HayShenLogo';
 const navigation = [
   { label: 'Գլխավոր', href: '#home' },
   { label: 'Ծառայություններ', href: '#services' },
-  { label: 'Տեխնիկա', href: '#equipment' },
+  // { label: 'Տեխնիկա', href: '#equipment' },
   { label: 'Մեր մասին', href: '#about' },
 ];
 
@@ -112,20 +112,20 @@ function Header() {
           </div>
         </div>
 
-        <div className="buttonsBox buttonsBox--desktop">
-          <a
-            className="appHeader__button appHeader__button--outline"
-            href="#login"
-          >
-            Մուտք գործել
-          </a>
-          <a
-            className="appHeader__button appHeader__button--filled"
-            href="#register"
-          >
-            Գրանցվել
-          </a>
-        </div>
+        {/*<div className="buttonsBox buttonsBox--desktop">*/}
+          {/*<a*/}
+          {/*  className="appHeader__button appHeader__button--outline"*/}
+          {/*  href="#login"*/}
+          {/*>*/}
+          {/*  Մուտք գործել*/}
+          {/*</a>*/}
+          {/*<a*/}
+          {/*  className="appHeader__button appHeader__button--filled"*/}
+          {/*  href="#register"*/}
+          {/*>*/}
+          {/*  Գրանցվել*/}
+          {/*</a>*/}
+        {/*</div>*/}
 
         <button
           className="appHeader__burger"

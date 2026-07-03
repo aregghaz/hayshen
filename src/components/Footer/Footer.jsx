@@ -1,4 +1,4 @@
-import { Camera, ExternalLink, Globe, Send, Video } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { HayShenLogo } from '@/components/icons/HayShenLogo';
 import '@/components/Footer/footer.scss';
 
@@ -7,6 +7,60 @@ const links = [
   { label: 'Ծառայություններ', href: '#services' },
   { label: 'Տեխնիկա', href: '#equipment' },
   { label: 'Մեր մասին', href: '#about' },
+];
+
+const socialLinks = [
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/hayshen.am/',
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=61565974949417',
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M14.2 8.4V6.8c0-.8.4-1.2 1.3-1.2h1.7V2.8c-.8-.1-1.7-.2-2.5-.2-2.6 0-4.4 1.6-4.4 4.5v1.3H7.5v3.2h2.8v9.8h3.5v-9.8h2.9l.5-3.2h-3z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+  },
+  {
+    label: 'TikTok',
+    href: '#tiktok',
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M15.8 3c.3 2.4 1.7 3.9 4.2 4.1v3.4c-1.5 0-2.9-.5-4.1-1.3v5.8c0 4.2-2.8 6.5-6.1 6.5-3 0-5.8-2-5.8-5.4 0-3.8 3.4-6.1 7-5.3v3.5c-1.6-.5-3.4.5-3.4 1.9 0 1.2 1 2 2.2 2 1.4 0 2.4-.8 2.4-2.8V3z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+  },
 ];
 
 function Footer() {
@@ -26,18 +80,11 @@ function Footer() {
             պատվիրատուներին միավորելու համար։
           </p>
           <div className="footer__socials">
-            <a href="#website" aria-label="Website">
-              <Globe />
-            </a>
-            <a href="#instagram" aria-label="Instagram">
-              <Camera />
-            </a>
-            <a href="#telegram" aria-label="Telegram">
-              <Send />
-            </a>
-            <a href="#youtube" aria-label="YouTube">
-              <Video />
-            </a>
+            {socialLinks.map((social) => (
+              <a href={social.href} aria-label={social.label} key={social.href}>
+                {social.icon}
+              </a>
+            ))}
           </div>
         </div>
 
