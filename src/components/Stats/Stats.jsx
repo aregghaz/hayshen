@@ -3,23 +3,23 @@ import '@/components/Stats/stats.scss';
 
 const stats = [
   {
-    value: 'Գտնել',
-    label: 'անհրաժեշտ տեխնիկան մեկ վայրում',
+    value: 'Որոնեք',
+    label: 'Գտեք անհրաժեշտ ապրանքը կամ ծառայությունը',
     Icon: Search,
   },
   {
-    value: 'Համեմատել',
-    label: 'առաջարկներն ու պայմանները',
+    value: 'Համեմատեք',
+    label: 'Առաջարկներն ու վարկանիշները',
     Icon: SlidersHorizontal,
   },
   {
-    value: 'Կապվել',
-    label: 'տեխնիկայի տիրոջ հետ ուղիղ',
+    value: 'Ընտրեք',
+    label: 'Լավագույն տարբերակը ձեզ համապատասխան',
     Icon: Contact,
   },
   {
-    value: 'Պատվիրել',
-    label: 'պարզ և հասկանալի քայլերով',
+    value: 'Պատվիրեք',
+    label: 'Արագ և անվտանգ',
     Icon: ClipboardCheck,
   },
 ];
